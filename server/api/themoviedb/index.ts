@@ -153,7 +153,7 @@ class TheMovieDb extends ExternalAPI implements TvShowProvider {
   public searchMulti = async ({
     query,
     page = 1,
-    includeAdult = false,
+    includeAdult = true,
     language = this.locale,
   }: SearchOptions): Promise<TmdbSearchMultiResponse> => {
     try {
@@ -175,7 +175,7 @@ class TheMovieDb extends ExternalAPI implements TvShowProvider {
   public searchMovies = async ({
     query,
     page = 1,
-    includeAdult = false,
+    includeAdult = true,
     language = this.locale,
     year,
   }: SingleSearchOptions): Promise<TmdbSearchMovieResponse> => {
@@ -204,7 +204,7 @@ class TheMovieDb extends ExternalAPI implements TvShowProvider {
   public searchTvShows = async ({
     query,
     page = 1,
-    includeAdult = false,
+    includeAdult = true,
     language = this.locale,
     year,
   }: SingleSearchOptions): Promise<TmdbSearchTvResponse> => {
@@ -585,7 +585,7 @@ class TheMovieDb extends ExternalAPI implements TvShowProvider {
   public getDiscoverMovies = async ({
     sortBy = 'popularity.desc',
     page = 1,
-    includeAdult = false,
+    includeAdult = true,
     includeVideo = true,
     language = this.locale,
     primaryReleaseDateGte,
