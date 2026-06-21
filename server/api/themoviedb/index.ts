@@ -261,7 +261,7 @@ class TheMovieDb extends ExternalAPI implements TvShowProvider {
       const data = await this.get<TmdbPersonCombinedCredits>(
         `/person/${personId}/combined_credits`,
         {
-          params: { language },
+          params: { language, include_adult: true },
         }
       );
 
