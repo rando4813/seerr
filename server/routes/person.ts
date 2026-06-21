@@ -72,7 +72,7 @@ personRoutes.get('/:id/combined_credits', async (req, res, next) => {
             )
           )
         )
-        .filter((item) => !item.adult && item.character !== 'Thanks'),
+        .filter((item) => item.character !== 'Thanks'),
       crew: combinedCredits.crew
         .map((result) =>
           mapCrewCredits(
@@ -83,7 +83,7 @@ personRoutes.get('/:id/combined_credits', async (req, res, next) => {
             )
           )
         )
-        .filter((item) => !item.adult && item.job !== 'Thanks'),
+        .filter((item) => item.job !== 'Thanks'),
       id: combinedCredits.id,
     });
   } catch (e) {
